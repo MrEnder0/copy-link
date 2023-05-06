@@ -8,7 +8,8 @@ extern crate rocket;
 fn index(text: String) -> String {
     let mut handlebars = Handlebars::new();
     handlebars.register_template_file("index", "templates/index.hbs").unwrap();
-    handlebars.insert("text", &text);
+    let mut data = BTreeMap::new();
+    data.insert("text", text);
     
     handlebars.render_template(source, &data).unwrap()
 }
