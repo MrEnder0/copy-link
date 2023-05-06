@@ -11,7 +11,7 @@ fn index(text: String) -> String {
     let mut data = BTreeMap::new();
     data.insert("text", text);
     
-    handlebars.render_template(source, &data).unwrap()
+    handlebars.render_template("index", &data).unwrap()
 }
 
 #[shuttle_runtime::main]
