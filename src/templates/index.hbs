@@ -1,8 +1,71 @@
 <head>
-    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: #8da5af;
+        }
+        .canvas {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            height: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 9px rgba(0, 0, 0, 0.4);
+            border-radius: 1rem;
+            width: fit-content;
+            padding: 1rem;
+            outline: none;
+        }
+        .container h1 {
+            font-size: 50px;
+            color: #fff;
+            font: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container img {
+            margin-left: 0%;
+            width: 60px;
+            height: 60px;
+            padding-right: 1rem;
+            transition: 1s;
+        }
+        .container img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: 1s;
+        }
+        .container img:active {
+            transform: scale(1.2);
+            transition: 0.1s;
+        }
+        button {
+            height: 100%;
+            width: 100%;
+            opacity: 100%;
+            border-radius: 1rem;
+            background-color: transparent;
+            border: none;
+        }
+    </style>
 </head>
 
-<div class="center">
-    <h1>You searched this: </h1>
-    <p>{{text}}</p>
+<script>
+    function copyText() {
+        const text = document.querySelector('h1').innerText;
+        navigator.clipboard.writeText(text);
+    }
+</script>
+
+<div class="canvas">
+    <div class="container">
+        <button onclick="copyText()">
+            <img src="https://img.icons8.com/?size=512&id=PLUHvGVM7tbp&format=png" alt="link">
+        </button>
+        <h1>{{text}}</h1>
+    </div>
 </div>
