@@ -22,7 +22,9 @@ fn text(text: String) -> RawHtml<String> {
     RawHtml(handlebars_output)
 }
 
-#[launch]
-fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, text])
+#[shuttle_runtime::main]
+async fn rocket() -> shuttle_rocket::ShuttleRocket {
+    let rocket = rocket::build().mount("/", routes![index, text]);
+
+    Ok(rocket.into())
 }
