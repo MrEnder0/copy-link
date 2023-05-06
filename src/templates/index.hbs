@@ -64,6 +64,26 @@
             background-color: #dfe6e9;
             border-radius: 1rem;
         }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0; 
+            position: absolute;
+            z-index: 1;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
     </style>
 </head>
 
@@ -84,8 +104,9 @@
 </div>
 
 <footer>
-    <div>
+    <div class="tooltip">
         <a href="https://github.com/MrEnder0">
+            <span class="tooltiptext">Check out my GitHub</span>
             <img src="https://img.icons8.com/?size=512&id=EunjSDvCQ0Ry&format=png" alt="github" style="height: 100%;">
         </a>
     </div>
